@@ -1,5 +1,6 @@
 ﻿@model AuthorListViewModel
 
+@* ▼ Search box ▼ *@
 <section class="top-search-field">
 
     <form method="get" asp-controller="Author" asp-action="ViewAll">
@@ -16,6 +17,7 @@
 </section>
 
 
+@* ▼ Cards ▼ *@
 <section style="padding-top:0px;" class="cards-container">
     <div class="row">
 
@@ -55,9 +57,7 @@
 </section>
 
 
-
-
-
+@* ▼ Update Pop Up Window ▼ *@
 <section class="update-popup-section">
     <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -107,26 +107,7 @@
     </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@* ▼ Pagination ▼ *@
 <div class="pagination-container">
 
     <ul class="pagination">

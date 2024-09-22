@@ -2,6 +2,8 @@
 
     <div class="home-content">
        
+
+        @* ▼ Welcoming user from claim ▼ *@
         <h1> @User.Claims.FirstOrDefault( I => I.Type=="fullname")?.Value
         
         </h1>
@@ -14,6 +16,7 @@
             <a asp-controller="Book" asp-action="ViewAll" class="btn btn-primary btn-lg">Books &nbsp;<i class="fas fa-book icon"></i></a>
             <a asp-controller="Author" asp-action="ViewAll" class="btn btn-primary btn-lg">Authors &#9998;</a>
 
+            @* ▼ If User log in Join Now button no need and no show ▼ *@
             @if (!User.Identity.IsAuthenticated)
             {
                 <a asp-controller="Auth" asp-action="SignUp" class="btn btn-primary btn-lg">Join Now</a>

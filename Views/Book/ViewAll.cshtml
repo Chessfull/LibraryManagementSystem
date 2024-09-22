@@ -1,5 +1,7 @@
 ﻿@model BookListViewModel
 
+
+@* ▼ Search box ▼ *@
 <section class="top-search-field">
 
     <form method="get" asp-controller="Book" asp-action="ViewAll">
@@ -17,7 +19,7 @@
 
 </section>
 
-
+@* ▼ Cards ▼ *@
 <section class="cards">
     <div class="container-fluid">
         <div class="row">
@@ -56,7 +58,7 @@
     </div>
 </section>
 
-
+@* ▼ Update Pop Up Window ▼ *@
 <section class="update-popup-section">
 
     <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
@@ -119,8 +121,7 @@
 </section>
 
 
-
-
+@* ▼ Pagination ▼ *@
 <div class="pagination-container">
 
     <ul class="pagination">

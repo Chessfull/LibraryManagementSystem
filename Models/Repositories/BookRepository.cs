@@ -6,35 +6,42 @@ using System.Globalization;
 
 namespace LibraryManagementSystem.Models.Repositories
 {
-    public class BookRepository : ICsvRepository<BookViewModel>
+    public class BookRepository : ICsvRepository<Book> // With csvrepository<T> interface
     {
-        private readonly string _filePathCsv;
+        private readonly string _filePathCsv; // -> Csv file path for database 
 
+        // ▼ Ctor when creating instance take file path of repository connection to csv ▼
         public BookRepository(string filePathCsv)
         {
             _filePathCsv = filePathCsv;
         }
 
-        public List<BookViewModel> GetAll()
+        // ▼ This method is getting all values from database ▼
+        public List<Book> GetAll()
         {
+            // ▼ This part, methods coming from CsvHelper package reading database ▼
             using (var reader = new StreamReader(_filePathCsv))
 
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                var books = csv.GetRecords<Book>().Select(I => new BookViewModel { Id = I.Id, AuthorId = I.AuthorId, AuthorName = I.AuthorName, BookTitle = I.BookTitle, Description = I.Description, Genre = I.Genre, ImageURL = I.ImageURL, ISBN = I.ISBN, Publisher = I.Publisher, PublicationYear = I.PublicationYear, IsDeleted=I.IsDeleted, UpdateDate=I.UpdateDate }).ToList().Where(I=>I.IsDeleted==0).ToList(); 
+                var books = csv.GetRecords<Book>().Where(I=>I.IsDeleted==0).ToList(); 
                 return books;
             }
         }
 
-        public BookViewModel GetById(Guid bookId)
+        // ▼ This method is getting value from database match by id ▼
+        public Book GetById(Guid bookId)
         {
             return GetAll().Find(I => I.Id == bookId);
         }
 
-        public void Add(BookViewModel entity)
+        // ▼ This method is adding value to database ▼
+        public void Add(Book entity)
         {
             var books = GetAll();
             books.Add(entity);
+
+            // ▼ This part, methods coming from CsvHelper package writing database ▼
             using (var writer = new StreamWriter(_filePathCsv))
             using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
             {
@@ -42,15 +49,16 @@ namespace LibraryManagementSystem.Models.Repositories
             }
         }
 
-        public void Update(BookViewModel entity)
+        // ▼ This method is updating value from database ▼
+        public void Update(Book entity)
         {
             var books = GetAll();
 
             var bookIndex = books.FindIndex(I => I.Id == entity.Id);
 
             books[bookIndex] = entity;
-            
 
+            // ▼ This part, methods coming from CsvHelper package writing database ▼
             using (var writer = new StreamWriter(_filePathCsv))
             using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
             {
@@ -58,6 +66,7 @@ namespace LibraryManagementSystem.Models.Repositories
             }
         }
 
+        // ▼ This method is deleting value from database with id match ▼
         public void DeleteById(Guid id)
         {
             var books = GetAll();
@@ -67,6 +76,7 @@ namespace LibraryManagementSystem.Models.Repositories
             if (bookDeleted != null)
                 bookDeleted.IsDeleted = 1;
 
+            // ▼ This part, methods coming from CsvHelper package writing database ▼
             using (var writer = new StreamWriter(_filePathCsv))
             using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
             {
@@ -74,6 +84,12 @@ namespace LibraryManagementSystem.Models.Repositories
             }
         }
 
-       
+        // ▼ This method is returning book entity to viewmodel for using razor view actions ▼
+        public BookViewModel EntityToViewModel(Book entity)
+        {
+            return new BookViewModel { AuthorId = entity.AuthorId, AuthorName = entity.AuthorName, IsDeleted = entity.IsDeleted, UpdateDate = entity.UpdateDate, BookTitle = entity.BookTitle, Description = entity.Description, Genre = entity.Genre, Id = entity.Id, ImageURL = entity.ImageURL, ISBN = entity.ISBN, PublicationYear = entity.PublicationYear, Publisher = entity.Publisher };
+        }
+
+
     }
 }

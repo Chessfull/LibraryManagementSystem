@@ -1,17 +1,21 @@
-﻿console.log("External script loaded!");
+﻿/*▼ Just for checking script work ornot ▼ */
+console.log("External script loaded!");
 
+/*▼ Delete button script activated ▼*/
 function confirmDelete(bookId) {
     if (confirm("Are you sure you want to delete this book?")) {
         window.location.href = '/Book/Delete?bookId=' + bookId;
     }
 }
-
 function confirmDeleteAuthor(authorId) {
     if (confirm("Are you sure you want to delete this book?")) {
         window.location.href = '/Author/Delete?authorId=' + authorId;
     }
 }
 
+
+
+/*▼ For update pop up window - book ▼*/
 function loadBookDetails(button) {
 
     // Extract data from the clicked button
@@ -33,6 +37,9 @@ function loadBookDetails(button) {
     document.getElementById('imageUrl').value = imageUrl;
 }
 
+
+
+/*▼ For update pop up window - athor ▼*/
 function loadAuthorDetails(button) {
     var authorId = $(button).attr("author-id");
     var fullName = $(button).attr("author-fullname");

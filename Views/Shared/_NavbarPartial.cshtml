@@ -7,17 +7,18 @@
     <li class="forward"><a href="Feedback">Feedback</a></li>
 
 
-
+    @* ▼ If User not logged in will see login button ▼ *@
     @if (!User.Identity.IsAuthenticated)
     {
         <li class="login-link"><a asp-controller="Auth" asp-action="SignIn"><i class="fa fa-fw fa-user"></i> Login</a></li>
     }
+    @* ▼ If User logged in will see welcome text and log out button ▼ *@
     else
     {
 
         <li style="position: absolute;
     top: 15%;
-    right: 9%;
+    right: 11%;
     padding: 10px 15px; color:aqua;"><a><i class="fa fa-fw fa-user"></i> @User.Claims.FirstOrDefault(I => I.Type == "fullname")?.Value</a></li>
         <li class="login-link"><a asp-controller="Auth" asp-action="SignOut"><i class="fa fa-fw fa-user"></i> Logout</a></li>
     }

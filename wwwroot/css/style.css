@@ -1,6 +1,6 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 
-
+/*▼ body and container & logo ▼*/
 body {
     padding: 0;
     margin: 0;
@@ -66,8 +66,7 @@ body {
 
 
 
-
-/*▼ Search button ▼*/
+/*▼ Search button ( on top of books view all and authors view all page ) ▼*/
 .top-search-field {
     display: flex;
     flex-direction: row;
@@ -122,6 +121,8 @@ body {
 .search-container:hover {
     animation: hoverShake 0.15s linear 3;
 }
+
+
 
 /*▼ Navbar ▼*/
 .nav-links {
@@ -203,6 +204,8 @@ body {
 }
 
 
+
+
 /*▼ Footer ▼*/
 .footer {
     height: 50px;
@@ -220,7 +223,9 @@ body {
         margin: 0;
     }
 
-/*▼ Cards on viewall pages ▼*/
+
+
+/*▼ Card views on viewall pages both applied book & athor ▼*/
 .custom-card {
     height: 600px; 
     width:400px;
@@ -270,28 +275,6 @@ body {
         margin-right:3%;
     }
 
-@media (max-width: 768px) {
-    .card-title {
-        font-size: 1.2rem; 
-    }
-
-    .card-text {
-        font-size: 0.9rem; 
-    }
-}
-
-@media (max-width: 576px) {
-    .card-title {
-        font-size: 1rem;
-    }
-
-    .card-text {
-        font-size: 0.8rem; 
-    }
-}
-
-
-
 
 
 /*▼ Pagination on viewall pages ▼*/
@@ -329,6 +312,7 @@ body {
         background-color: #007bff;
         color: white;
     }
+
 
 
 /* ▼ Create page form ▼*/
@@ -384,15 +368,11 @@ form{
     border: 1px solid #ccc;
 }
 
-
-
-
-
-
 .mb-3 input{
 
     width:420px;
 }
+
 
 
 
@@ -497,46 +477,41 @@ form .text h3 {
     display:flex;
     align-items:center;
     flex-direction:column;
-    margin-top:5%;
+    margin-top:1%;
 
 
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 768px) {
-    .card-title {
-        font-size: 1.2rem;
-    }
-
-    .card-text {
-        font-size: 0.9rem;
-    }
-
-}
-
+/*▼ For responsive views ▼ */
 @media (max-width: 576px) {
+    
+    .home-content h1 {
+        font-size: 36px;
+    }
+
+    .home-content span {
+        font-size: 16px;
+    }
+
+    
+    .home-content div.buttons-home a {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .form-control, .mb-3 input, .search-container, .input-box {
+        width: 100%;
+    }
+
+    .form-container, .form-frame, .custom-card {
+        width: 100%;
+    }
+
+    .wrapper {
+        width: 90%;
+    }
+
     .card-title {
         font-size: 1rem;
     }
@@ -545,3 +520,40 @@ form .text h3 {
         font-size: 0.8rem;
     }
 }
+
+@media (max-width: 768px) {
+    .container-renderbody {
+        margin-bottom: -20px;
+    }
+
+    .home-content {
+        padding: 0px 0px 10vh 10vh;
+    }
+
+        .home-content h1 {
+            font-size: 50px;
+        }
+
+        .home-content span {
+            font-size: 22px;
+        }
+
+    .form-frame, .custom-card {
+        width: 90%;
+    }
+
+    .login-link {
+        right: 5%;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+}
+
+
+

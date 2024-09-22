@@ -5,42 +5,52 @@ using System.Globalization;
 
 namespace LibraryManagementSystem.Models.Repositories
 {
-    public class AuthorRepository:ICsvRepository<AuthorViewModel>
+    public class AuthorRepository:ICsvRepository<Author> // With csvrepository<T> interface
     {
 
-        private readonly string _filePathCsv;
+        private readonly string _filePathCsv; // -> Csv file path for database 
 
+        // ▼ Ctor when creating instance take file path of repository connection to csv ▼
         public AuthorRepository(string filePathCsv)
         {
             _filePathCsv = filePathCsv;
         }
 
-        public List<AuthorViewModel> GetAll()
+        // ▼ This method is getting all values from database ▼
+        public List<Author> GetAll()
         {
+            // ▼ This part, methods coming from CsvHelper package reading database ▼
             using (var reader = new StreamReader(_filePathCsv))
 
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                var authors = csv.GetRecords<Author>().ToList().Select(I=>new AuthorViewModel() { About=I.About, Birthdate=I.Birthdate, FullName=I.FullName, AuthorId=I.AuthorId, ImageUrl=I.ImageUrl, IsDeleted=I.IsDeleted, UpdateDate=I.UpdateDate}).ToList().Where(I=>I.IsDeleted==0).ToList();
+                var authors = csv.GetRecords<Author>().Where(I=>I.IsDeleted==0).ToList(); // -> IsDeleted filter for soft delete process
                 return authors;
             }
         }
-        public AuthorViewModel GetById(Guid id)
+
+        // ▼ This method is getting value from database match by id ▼
+        public Author GetById(Guid id)
         {
             return GetAll().Find(I=>I.AuthorId==id);
         }
 
-        public void Add(AuthorViewModel entity)
+        // ▼ This method is adding value to database ▼
+        public void Add(Author entity)
         {
             var authors = GetAll();
             authors.Add(entity);
+
+            // ▼ This part, methods coming from CsvHelper package writing database ▼
             using (var writer = new StreamWriter(_filePathCsv))
             using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
             {
                 csv.WriteRecords(authors);
             }
         }
-        public void Update(AuthorViewModel entity)
+
+        // ▼ This method is updating value from database ▼
+        public void Update(Author entity)
         {
             var authors = GetAll();
 
@@ -48,7 +58,7 @@ namespace LibraryManagementSystem.Models.Repositories
 
             authors[authorIndex] = entity;
 
-
+            // ▼ This part, methods coming from CsvHelper package writing database after change ▼
             using (var writer = new StreamWriter(_filePathCsv))
             using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
             {
@@ -56,6 +66,7 @@ namespace LibraryManagementSystem.Models.Repositories
             }
         }
 
+        // ▼ This method is deleting value from database with id match ▼
         public void DeleteById(Guid id)
         {
             var authors = GetAll();
@@ -63,8 +74,9 @@ namespace LibraryManagementSystem.Models.Repositories
             var authorDeleted = authors.SingleOrDefault(I => I.AuthorId == id);
 
             if (authorDeleted != null)
-                authorDeleted.IsDeleted = 1;
+                authorDeleted.IsDeleted = 1; // -> For soft delete process
 
+            // ▼ This part, methods coming from CsvHelper package writing database after change ▼
             using (var writer = new StreamWriter(_filePathCsv))
             using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
             {
@@ -73,8 +85,10 @@ namespace LibraryManagementSystem.Models.Repositories
 
         }
 
-
-
-
+        // ▼ This method is returning author entity to viewmodel for using razor view actions ▼
+        public AuthorViewModel EntityToViewModel(Author entity)
+        {
+            return new AuthorViewModel {  About=entity.About, AuthorId=entity.AuthorId, Birthdate=entity.Birthdate, FullName=entity.FullName, ImageUrl=entity.ImageUrl, IsDeleted=entity.IsDeleted, UpdateDate=entity.UpdateDate };
+        }
     }
 }

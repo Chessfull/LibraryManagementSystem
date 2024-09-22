@@ -2,10 +2,10 @@
 
 namespace LibraryManagementSystem.Models.ViewModels
 {
-    public class AuthorCreateViewModel
+    public class AuthorCreateViewModel // -> For create viewmodel
     {
         public Guid AuthorId { get; set; }
-        [Required(ErrorMessage = "You should fill this field.")]
+        [Required(ErrorMessage = "You should fill this field.")] // -> Asp Validation required and min length
         [MinLength(1)]
         public string FullName { get; set; }
         [Required(ErrorMessage = "You should fill this field.")]

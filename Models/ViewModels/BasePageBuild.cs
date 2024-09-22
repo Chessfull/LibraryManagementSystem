@@ -1,6 +1,6 @@
 ﻿namespace LibraryManagementSystem.Models.ViewModels
 {
-    public class BasePageBuild
+    public class BasePageBuild // -> For pagination base class
     {
         public int CurrentPage { get; set; }
         public int TotalPages { get; set; }

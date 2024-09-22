@@ -1,6 +1,6 @@
 ﻿namespace LibraryManagementSystem.Models.Entities
 {
-    public class Author
+    public class Author // AuthorDB entity
     {
         public Guid AuthorId { get; set; }
         public string FullName { get; set; }

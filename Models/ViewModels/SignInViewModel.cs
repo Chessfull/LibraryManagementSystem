@@ -2,8 +2,8 @@
 
 namespace LibraryManagementSystem.Models.ViewModels
 {
-    public class SignInViewModel
-    {
+    public class SignInViewModel // -> For SignIn viewmodel
+    { 
         public string Email { get; set; }
         public string Password { get; set; }
 

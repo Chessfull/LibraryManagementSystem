@@ -1,6 +1,6 @@
 ﻿namespace LibraryManagementSystem.Models.ViewModels
 {
-    public class BookUpdateViewModel
+    public class BookUpdateViewModel // -> For update viewmodel
     {
         public Guid BookId { get; set; }
         public string BookTitle { get; set; }

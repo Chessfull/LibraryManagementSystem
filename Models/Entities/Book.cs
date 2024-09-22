@@ -1,6 +1,6 @@
 ﻿namespace LibraryManagementSystem.Models.Entities
 {
-    public class Book
+    public class Book // BookDB entity
     {
         public Guid Id { get; set; }
         public string ISBN { get; set; }

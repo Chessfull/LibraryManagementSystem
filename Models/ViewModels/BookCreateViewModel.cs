@@ -4,7 +4,7 @@ namespace LibraryManagementSystem.Models.ViewModels
 {
     public class BookCreateViewModel
     {
-        [Required (ErrorMessage ="You should fill this field.")]
+        [Required (ErrorMessage ="You should fill this field.")] // -> Asp Validation required and min length
         [MinLength (1)]
         public string BookTitle { get; set; }
         
