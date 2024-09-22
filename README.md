@@ -1,6 +1,5 @@
 ### :notebook: This is an ASP.NET web application with MVC pattern that includes library book and author management along with a user authentication system. :notebook:
 -> C#, HTML, CSS, JavaScript
-
 <details> <summary><h2>With click left arrow you can view screenshots from web views of project</h2></summary>
   
   <img src="https://i.ibb.co/jyD8c64/Homepage.png"  />
@@ -10,7 +9,6 @@
      <img src="https://i.ibb.co/16p0k5T/Author-View-All.png"  />
       <img src="https://i.ibb.co/T1yC9Js/Register-Form.png"  />
        <img src="https://i.ibb.co/tQzWjXP/Sign-In-Form.png"  />
-  
 </details>
 
 
