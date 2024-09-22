@@ -1,5 +1,6 @@
 ### :notebook: This is an ASP.NET web application with MVC pattern that includes library book and author management along with a user authentication system. :notebook:
 -> C#, HTML, CSS, JavaScript
+
 <details> <summary><h2>With click left arrow you can view screenshots from web views of project</h2></summary>
   <img src="https://i.ibb.co/jyD8c64/Homepage.png"  />
    <img src="https://i.ibb.co/N7zzj7Z/Home-Screen-With-Login.png"  />
@@ -14,6 +15,13 @@
 
 ![MVC](https://github.com/user-attachments/assets/3701b368-e837-4b9b-9fd9-13650ee07da0)
 
+### Methods
+:mag: `List<T> GetAll` : With using CsvHelper getting all datas from csv file. 
+
+:mag: Also has configrations on Interface Repository -> GetById, Add, Update, DeleteById.
+
+:mag: `EntityToViewModel (entity)` : Public method helps converting from entity to viewmodel.
+
 ### :incoming_envelope: Contact Information :incoming_envelope:
 
 For any questions or further information, please don't hesitate to contact me :pray:
@@ -21,6 +29,11 @@ For any questions or further information, please don't hesitate to contact me :p
 Email: merttopcu.dev@gmail.com
 
 LinkedIn: https://www.linkedin.com/in/mert-topcu/
+
+
+
+
+
 
  
 
