@@ -16,9 +16,7 @@
 ![MVC](https://github.com/user-attachments/assets/3701b368-e837-4b9b-9fd9-13650ee07da0)
 
 ### Methods
-:mag: `List<T> GetAll` : With using CsvHelper getting all datas from csv file. 
-
-:mag: Also has configrations on Interface Repository -> GetById, Add, Update, DeleteById.
+:mag: `List<T> GetAll` : With using CsvHelper getting all datas from csv file. Also has configrations on Interface Repository -> GetById, Add, Update, DeleteById.
 
 :mag: `EntityToViewModel (entity)` : Public method helps converting from entity to viewmodel.
 
