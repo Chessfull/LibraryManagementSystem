@@ -1,4 +1,4 @@
-## This is an ASP.NET web application that with MVC pattern includes library book and author management along with a user authentication system written with C#, HTML, CSS, JavaScript. :notebook:
+### :notebook: This is an ASP.NET web application with MVC pattern that includes library book and author management along with a user authentication system. :notebook: -> C#, HTML, CSS, JavaScript
 
 
 ![My Entities](https://github.com/user-attachments/assets/4360a4da-c407-4069-ab57-1c573e67f60c)
