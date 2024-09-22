@@ -30,7 +30,7 @@
 
 :mag: `Delete` : Delete books and authors that you want with using this button.
 
-:mag: `Join-Logout` : Register as a user with Join Now and explore user authentication features and claims.
+:mag: `Join-Logout` : Register as a user and explore user authentication features and claims.
 
 ### :incoming_envelope: Contact Information :incoming_envelope:
 
