@@ -5,7 +5,7 @@
 
 <details>
   <summary>The title of the image group</summary>
-  <img src="(https://images.gr-assets.com/authors/1335187160p7/23906.jpg)" alt="image-description"/>
-  <img src="(https://images.gr-assets.com/authors/1335187160p7/23906.jpg)" alt="image-description"/>
-  <img src="(https://images.gr-assets.com/authors/1335187160p7/23906.jpg)" alt="image-description"/>
+  <img src="https://images.gr-assets.com/authors/1335187160p7/23906.jpg" alt="image-description"/>
+  <img src="https://images.gr-assets.com/authors/1335187160p7/23906.jpg" alt="image-description"/>
+  <img src="https://images.gr-assets.com/authors/1335187160p7/23906.jpg" alt="image-description"/>
 </details>
