@@ -1,3 +1,6 @@
+## This is an ASP.NET MVC web application that includes library book and author management along with a user authentication system. :notebook: Used -> C#, HTML, CSS, JavaScript
+
+
 ![My Entities](https://github.com/user-attachments/assets/4360a4da-c407-4069-ab57-1c573e67f60c)
 
 ![MVC](https://github.com/user-attachments/assets/3701b368-e837-4b9b-9fd9-13650ee07da0)
@@ -16,7 +19,13 @@
   
 </details>
 
+### :incoming_envelope: Contact Information :incoming_envelope:
 
+For any questions or further information, please don't hesitate to contact me :pray:
+
+Email: merttopcu.dev@gmail.com
+
+LinkedIn: https://www.linkedin.com/in/mert-topcu/
 
  
 
