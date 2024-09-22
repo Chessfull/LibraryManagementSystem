@@ -17,8 +17,8 @@
 
 
 <details>
-  <summary><h2>The title of the image group</h2></summary>
-  <img src="https://images.gr-assets.com/authors/1335187160p7/23906.jpg" alt="image-description"/>
+  <summary><h2>With click left arrow you can view screenshots from web views of project</h2></summary>
+  ![My Entities](https://github.com/user-attachments/assets/4360a4da-c407-4069-ab57-1c573e67f60c)
   <img src="https://images.gr-assets.com/authors/1335187160p7/23906.jpg" alt="image-description"/>
   <img src="https://images.gr-assets.com/authors/1335187160p7/23906.jpg" alt="image-description"/>
 </details>
