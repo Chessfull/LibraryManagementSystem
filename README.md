@@ -1,1 +1,1 @@
-# LibraryManagementSystem
+<img src="images/logo.png" alt="Logo" class="logo-img">
