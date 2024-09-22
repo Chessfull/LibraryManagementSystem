@@ -4,25 +4,21 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<details>
+<details> <summary><h2>With click left arrow you can view screenshots from web views of project</h2></summary>
   
-  <img src="https://images.gr-assets.com/authors/1335187160p7/23906.jpg" alt="image-description"/>
-   <img src="https://images.gr-assets.com/authors/1335187160p7/23906.jpg" alt="image-description"/>
+  <img src="https://i.ibb.co/jyD8c64/Homepage.png"  />
+   <img src="https://i.ibb.co/N7zzj7Z/Home-Screen-With-Login.png"  />
+   <img src="https://i.ibb.co/L5Xfdgm/Book-View-All.png"  />
+    <img src="https://i.ibb.co/6nSC5Mp/Update-Pop-Up.png"  />
+     <img src="https://i.ibb.co/16p0k5T/Author-View-All.png"  />
+      <img src="https://i.ibb.co/T1yC9Js/Register-Form.png"  />
+       <img src="https://i.ibb.co/tQzWjXP/Sign-In-Form.png"  />
   
 </details>
 
 
 
-<summary><h2>With click left arrow you can view screenshots from web views of project</h2></summary>
+ 
+
+
+
