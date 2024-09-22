@@ -15,10 +15,22 @@
 
 ![MVC](https://github.com/user-attachments/assets/3701b368-e837-4b9b-9fd9-13650ee07da0)
 
-### Methods
+## Flows
 :mag: `List<T> GetAll` : With using CsvHelper getting all datas from csv file. Also has configrations on Interface Repository -> GetById, Add, Update, DeleteById.
 
 :mag: `EntityToViewModel (entity)` : Public method helps converting from entity to viewmodel.
+
+:mag: `ViewAll` : You can view a paginated list of books and authors.
+
+:mag: `Details` : Click this button for a more detailed view.
+
+:mag: `Create` : Add new books and authors using this button, with ASP.NET validation.
+
+:mag: `Update` : Use this button to make updates in a pop-up window on books and authors that you want.
+
+:mag: `Delete` : Delete books and authors that you want with using this button.
+
+:mag: `Join-Logout` : Register as a user and explore user authentication features and claims.
 
 ### :incoming_envelope: Contact Information :incoming_envelope:
 
