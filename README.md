@@ -1,4 +1,4 @@
-## This is an ASP.NET MVC web application that includes library book and author management along with a user authentication system. :notebook: Used -> C#, HTML, CSS, JavaScript
+## This is an ASP.NET MVC web application that includes library book and author management along with a user authentication system written with C#, HTML, CSS, JavaScript. :notebook:
 
 
 ![My Entities](https://github.com/user-attachments/assets/4360a4da-c407-4069-ab57-1c573e67f60c)
