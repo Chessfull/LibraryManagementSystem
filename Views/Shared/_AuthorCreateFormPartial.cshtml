@@ -1,0 +1,32 @@
+﻿@model AuthorCreateViewModel
+
+<section class="form-container">
+    <div class="form-frame">
+        <div class="form-explanation">
+            <h2>Form Explanation</h2>
+            <p>You can enter the details of the author you want to add in the form fields below. Please enter submit button after that.</p>
+        </div>
+        <div class="form-content">
+            <form method="post" asp-controller="Author" asp-action="Create">
+                <div class="form-group">
+                    <input asp-for="FullName" class="form-control" placeholder="Author Name">
+                    <span asp-validation-for="FullName" class="text-danger mt-2 fw-bold"></span>
+                    <input asp-for="Birthdate" class="form-control" placeholder="Birthdate">
+                    <span asp-validation-for="Birthdate" class="text-danger mt-2 fw-bold"></span>
+                    <input asp-for="About" class="form-control" placeholder="About">
+                    <span asp-validation-for="About" class="text-danger mt-2 fw-bold"></span>
+                    <input asp-for="ImageUrl" class="form-control" placeholder="Image URL">
+                    <span class="text-danger mt-2 fw-bold"></span>
+
+                </div>
+                <button style="width:200px; display:flex; justify-content:center; margin-top: 10px;
+    margin-bottom:30px;
+    padding: 10px;
+    border-radius: 4px;" type="submit" class="btn btn-primary">
+                    Submit
+                </button>
+
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,151 @@
+﻿@model BookListViewModel
+
+<section class="top-search-field">
+
+    <form method="get" asp-controller="Book" asp-action="ViewAll">
+        <div class="search-container">
+            <input type="text" name="search" placeholder="Book Title, Genre, Author" class="search-input">
+
+            <i style="color:#0B5ED7;" class="fas fa-search"></i>
+
+        </div>
+    </form>
+    
+    <a  asp-controller="Book" asp-action="Create" style="margin: 10px;
+    width: 140px;
+    font-size: 19px; height:40px;" class="btn btn-primary mt-0">Create <i class="fas fa-book icon"></i></a>
+
+</section>
+
+
+<section class="cards">
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var book in Model.Books)
+            {
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+
+                    <div class="card custom-card">
+                        <img src="@book.ImageURL" class="card-img-top custom-card-img" alt="Book Image">
+                        <div class="card-body custom-card-body">
+                            <h4 class="card-title">@book.BookTitle</h4>
+                            <p class="card-text custom-card-text">
+                                <strong>Author:</strong><a asp-controller="Author" asp-action="View" asp-route-authorID="@book.AuthorId">@book.AuthorName</a> <br>
+                                <strong>Publisher:</strong> @book.Publisher, &nbsp;@book.PublicationYear<br>
+                                <strong>Description:</strong> @book.Description
+                            </p>
+
+
+                            <div class="custom-card-footer">
+                                <a asp-controller="Book" asp-action="View" asp-route-bookId="@book.Id" class="btn btn-primary mt-2">Details</a>
+
+
+                                <a asp-controller="Book" asp-action="Update" data-bs-toggle="modal" data-bs-target="#updateModal" data-book-id="@book.Id" data-book-title=@book.BookTitle
+                                   data-book-author=@book.AuthorName data-book-publisher=@book.Publisher data-book-publishyear=@book.PublicationYear data-book-description=@book.Description data-book-image=@book.ImageURL onclick="loadBookDetails(this)" class="btn btn-warning mt-2">Update</a>
+
+
+                                <button asp-controller="Book" asp-action="Delete" asp-route-bookId="@book.Id" class="btn btn-danger mt-2" onclick="confirmDelete('@book.Id')">Delete</button>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+
+<section class="update-popup-section">
+
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateModalLabel">Update Book</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="update-pop-up-forms">
+
+                    <form id="updateForm" method="post" asp-controller="Book" asp-action="Update">
+
+                            <div class="mb-3">
+                                <input asp-for=BookUpdated.BookId type="hidden" class="form-control" id="bookId" name="bookId">
+                            </div>
+
+                    <div class="mb-3">
+                        <label for="bookTitle" class="form-label">Book Title</label>
+                        <input asp-for=BookUpdated.BookTitle type="text" class="form-control" id="bookTitle" name="bookTitle">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="authorName" class="form-label">Author Name</label>
+                        <input asp-for=BookUpdated.AuthorName type="text" class="form-control" id="authorName" name="authorName">
+                    </div>
+
+                        <div class="mb-3">
+                            <label for="publisher" class="form-label">Publisher</label>
+                            <input asp-for=BookUpdated.Publisher type="text" class="form-control" id="publisher" name="publisher">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="publicationYear" class="form-label">Publication Year</label>
+                            <input asp-for=BookUpdated.PublicationYear type="text" class="form-control" id="publicationYear" name="publicationYear">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <input asp-for=BookUpdated.Description type="text" class="form-control" id="description" name="description">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="imageUrl" class="form-label">Image Url</label>
+                            <input asp-for=BookUpdated.ImageURL type="text" class="form-control" id="imageUrl" name="imageUrl">
+                        </div>
+
+                    <button asp-controller="Book" asp-action="Update" type="submit" class="btn btn-primary">Update</button>
+
+                </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+
+
+<div class="pagination-container">
+
+    <ul class="pagination">
+        @if (Model.CurrentPage > 1)
+        {
+            <li class="page-item">
+                <a class="page-link" href="@Url.Action("ViewAll", new { page = Model.CurrentPage - 1 })">Previous</a>
+            </li>
+        }
+
+        @for (int i = Model.StartPage; i <= Model.EndPage; i++)
+        {
+            <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                <a class="page-link" href="@Url.Action("ViewAll", new { page = i })">@i</a>
+            </li>
+        }
+
+        @if (Model.CurrentPage < Model.TotalPages)
+        {
+            <li class="page-item">
+                <a class="page-link" href="@Url.Action("ViewAll", new { page = Model.CurrentPage + 1 })">Next</a>
+            </li>
+        }
+    </ul>
+
+</div>
+
+

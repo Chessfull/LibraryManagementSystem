@@ -1,0 +1,19 @@
+﻿@model BookViewModel
+
+
+<section>
+<div class="card custom-card" style="display:flex; width:auto; height:100%; justify-content: center; align-items: center;">
+    <img src="@Model.ImageURL" class="card-img-top custom-card-img" alt="Book Image" style="max-width: 100%;">
+    <div class="card-body custom-card-body">
+        <h4 class="card-title" style="display:flex; height:100%; justify-content: center; align-items: center;">@Model.BookTitle </h4>
+        <p class="card-text custom-card-text" style="display: block;">
+            <br><strong>ISBN:</strong> @Model.ISBN<br>
+            <strong>Author:</strong> <a asp-controller="Author" asp-action="View" asp-route-authorID="@Model.AuthorId">@Model.AuthorName</a> <br>
+            <strong>Publisher:</strong> @Model.Publisher, &nbsp;@Model.PublicationYear<br>
+            <strong>Genre:</strong> @Model.Genre <br><br>
+            <strong>Description:</strong> @Model.Description
+        </p>
+    </div>
+</div>
+</section>
+

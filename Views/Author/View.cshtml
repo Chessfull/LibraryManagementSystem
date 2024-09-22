@@ -1,0 +1,17 @@
+﻿@model AuthorViewModel
+
+
+<div class="card custom-card" style="width: 100vh; margin: 60px auto;">
+    <img src="@Model.ImageUrl" class="card-img-top custom-card-img" alt="Author Image" style="max-width: 100%;">
+    <div class="card-body custom-card-body">
+        <h4 class="card-title">@Model.FullName</h4>
+        <p class="card-text custom-card-text">
+            <strong>Birthdate:</strong> @Model.Birthdate<br>
+            <strong>About:</strong> @Model.About
+        </p>
+    </div>
+</div>
+
+
+
+   

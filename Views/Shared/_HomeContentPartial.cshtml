@@ -1,0 +1,26 @@
+﻿<section class="home-section">
+
+    <div class="home-content">
+       
+        <h1> @User.Claims.FirstOrDefault( I => I.Type=="fullname")?.Value
+        
+        </h1>
+
+        <h1>
+            Welcome to <img src="images/logo.png" alt="Logo" class="logo-img"> Library
+        </h1>
+        <span>&nbsp; &nbsp; &nbsp; &nbsp; Over 5 thousand books, authors and descriptions with one click.</span>
+        <div class="buttons-home">
+            <a asp-controller="Book" asp-action="ViewAll" class="btn btn-primary btn-lg">Books &nbsp;<i class="fas fa-book icon"></i></a>
+            <a asp-controller="Author" asp-action="ViewAll" class="btn btn-primary btn-lg">Authors &#9998;</a>
+
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <a asp-controller="Auth" asp-action="SignUp" class="btn btn-primary btn-lg">Join Now</a>
+            }
+          
+        </div>
+    </div>
+    
+</section>
+

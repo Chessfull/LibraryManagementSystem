@@ -1,0 +1,58 @@
+﻿@model SignUpViewModel
+
+<section class="sign-up-form-container">
+<div class="wrapper">
+    <h2>Registration</h2>
+
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div class="alert alert-danger">
+                @ViewBag.ErrorMessage
+            </div>
+        }
+
+
+
+    <form method="post" asp-controller="Auth" asp-action="SignUp" >
+
+           
+
+
+        <div class="input-box">
+            <input asp-for=Name type="text" placeholder="Enter your name" required>
+        </div>
+            <div class="input-box">
+                <input asp-for=Surname type="text" placeholder="Enter your surname" required>
+            </div>
+
+
+        <div class="input-box">
+            <input asp-for=Email type="text" placeholder="Enter your email" required>
+        </div>
+
+            <div class="input-box">
+                <input asp-for=PhoneNumber type="text" placeholder="Enter your phone number" required>
+            </div>
+
+        <div class="input-box">
+            <input asp-for="Password" type="password" placeholder="Create password" required>
+        </div>
+        <div class="input-box">
+            <input asp-for=PasswordConfirm type="password" placeholder="Confirm password" required>
+        </div>
+
+        <div class="policy">
+            <input type="checkbox">
+            <h3>I accept all terms & condition</h3>
+        </div>
+
+        <div class="input-box button">
+            <input type="Submit" value="Register Now">
+        </div>
+
+        <div class="text">
+            <h3>Already have an account? <a asp-controller="Auth" asp-action="SignIn">Login now</a></h3>
+        </div>
+    </form>
+</div>
+</section>
